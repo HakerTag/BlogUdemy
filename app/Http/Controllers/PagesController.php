@@ -9,9 +9,9 @@ class PagesController extends Controller
 {
     protected $request;
 
-    public function __construct(Request $request)
+    public function __construct()
     {
-        $this->request = $request;
+        $this->middleware('example',['except'=>'home']);
     }
 
     public function home()
@@ -21,13 +21,17 @@ class PagesController extends Controller
 
     public function contactos()
     {
-    	return view('contactos');
+    	//return view('contactos');
     }
 
     public function mensaje(CreateMessageRequest $request)
     {
 
-         return $request->all();
+         $data = $request->all(); //Procesar los datos del formulario, devuelve un array
+
+         //redirección
+         return back()
+                ->with('info', 'Tu mensaje ha sido enviado correctamente :)');
     }
 
     public function saludo($nombre = "Invitado")
