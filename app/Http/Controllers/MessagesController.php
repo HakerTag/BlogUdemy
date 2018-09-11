@@ -48,7 +48,7 @@ class MessagesController extends Controller
             "updated_at" => Carbon::now(),
         ]);
 
-        return redirect()->route('messages.index');
+        return redirect()->route('mensajes.index');
     }
 
     /**
@@ -83,7 +83,7 @@ class MessagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateMessageRequest $request, $id)
     {
         DB::table('messages')->where('id',$id)->update([
             "nombre" => $request->input('nombre'),
@@ -91,7 +91,7 @@ class MessagesController extends Controller
             "mensaje" => $request->input('mensaje'),
             "updated_at" => Carbon::now(),
         ]);
-        return redirect()->route('messages.index');
+        return redirect()->route('mensajes.index');
     }
 
     /**
@@ -104,6 +104,6 @@ class MessagesController extends Controller
     {
         DB::table('messages')->where('id', $id)->delete();
 
-        return redirect()->route('messages.index');
+        return redirect()->route('mensajes.index');
     }
 }

@@ -8,7 +8,7 @@
 	<h3>{{ session('info') }}</h3>
 @else
 
-<form method="POST" action="{{ route('messages.store') }}">
+<form method="POST" action="{{ route('mensajes.store') }}">
 	{!! csrf_field() !!}
 	<p><label for="nombre">
 		Nombre
