@@ -15,6 +15,6 @@ Route::get('saludos/{nombre?}', ['as' => 'saludos','uses' => 'PagesController@sa
 
 Route::resource('mensajes','MessagesController');
 
-Route::get('login','Auth\LoginController@showloginForm');
+Route::get('login','Auth\LoginController@showloginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');

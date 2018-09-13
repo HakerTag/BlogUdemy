@@ -18,4 +18,5 @@
 	@elseif(count($consolas) > 1)
 	<p>Tienes varias consolas</p>
 	@endif
+	
 	@endsection

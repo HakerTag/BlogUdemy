@@ -2,16 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<style>
-		.active{
-			text-decoration: none;
-			color: green;
-		}
-		.error{
-			color: red;
-			font-size: 12px;
-		}
-	</style>
+	<link rel="stylesheet" href="/css/app.css">
 	<title>Mi sitio</title>
 </head>
 <body>
@@ -28,9 +19,10 @@
 				href="{{ route('saludos', 'Daniel') }}">Saludos</a>
 			<a class="{{ activeMenu('mensajes/create') }}" 
 				href="{{ route('mensajes.create') }}">Contactos</a>
+				@if(auth()->check())
 			<a class="{{ activeMenu('mensajes') }}" 
 				href="{{ route('mensajes.index') }}">Mensajes</a>
-				@if(auth()->check())
+				
 			<a href="/logout">Cerrar sesion de {{ auth()->user()->name }}</a>
 				@endif
 				@if(auth()->guest())

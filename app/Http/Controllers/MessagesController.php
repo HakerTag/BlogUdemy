@@ -13,7 +13,7 @@ class MessagesController extends Controller
 
     function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth',['except' => ['create', 'store']]);
     }
     /**
      * Display a listing of the resource.
@@ -46,11 +46,9 @@ class MessagesController extends Controller
     public function store(CreateMessageRequest $request)
     {
         //Guardar mensaje
-
-       
         Message::create($request->all());
 
-        return redirect()->route('mensajes.index');
+        return redirect()->route('mensajes.create')->with('info', 'Hemos Recibido tu mensaje');
     }
 
     /**
