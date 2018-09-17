@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('contenido')
-<h1>Saludos para <?php echo $nombre; ?> </h1>
+<h1>Saludos para {{ $nombre }} </h1>
 
 	{{  $html }}
 	{{  $script }}

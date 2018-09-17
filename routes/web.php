@@ -1,13 +1,4 @@
 <?php
-Route::get('test', function(){
-	$user = new App\User;
-	$user->name = 'Daniel';
-	$user->email = 'daniel@gmail.com';
-	$user->password = bcrypt('123123');
-	$user->save();
-
-	return $user;
-});
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 
