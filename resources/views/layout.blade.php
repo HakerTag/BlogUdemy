@@ -28,28 +28,23 @@
 		</li>
 		@endif
 
-     	<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+     	
 		
     </ul>
-    <ul class="navbar-nav">
+    <ul class="navbar-nav my-2 my-lg-0">
         @if(auth()->guest())
-    	<li class="nav-item active {{ activeMenu('login') }}">
+    	<li style="float: right;" class="nav-item active {{ activeMenu('login') }}">
 			<a class="nav-link" href="/login">Login</a>
 		</li>
    		@else
-   		<li>
-   			<a href="/logout">Cerrar sesion de {{ auth()->user()->name }}</a>
-   		</li>
+   		<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ auth()->user()->name }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/logout">Cerrar Sesión</a>
+        </div>
+      </li>
    		@endif
    	</ul>
   </div>

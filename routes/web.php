@@ -1,5 +1,11 @@
 <?php
 
+App\User::create([
+'name' => 'Daniel',
+'email' => 'daniel@gmail.com',
+'password' => bcrypt('123123')
+]);
+
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 
 Route::get('saludos/{nombre?}', ['as' => 'saludos','uses' => 'PagesController@saludo'])->where('nombre', "[A-Za-z]+");
