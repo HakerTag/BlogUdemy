@@ -12,20 +12,20 @@
 	{!! csrf_field() !!}
 	<p><label for="nombre">
 		Nombre
-		<input type="text" name="nombre" value="{{ old('nombre') }}">
+		<input class="form-control"  type="text" name="nombre" value="{{ old('nombre') }}">
 		{!! $errors->first('nombre','<span class=error>:message</span>')  !!}
 	</label></p>
 	<p><label for="email">
 		Email
-		<input type="email" name="email" value="{{ old('email') }}">
+		<input class="form-control" type="email" name="email" value="{{ old('email') }}">
 		{!!  $errors->first('email','<span class=error>:message</span>') !!}
 	</label></p>
 	<p><label for="email">
 		Mensaje
-		<textarea name="mensaje">{{ old('mensaje') }}</textarea>
+		<textarea class="form-control" name="mensaje">{{ old('mensaje') }}</textarea>
 		{!! $errors->first('mensaje','<span class=error>:message</span>') !!}
 	</label></p>
-	<button class="btn">Enviar</button>
+	<button class="btn btn-primary ">Enviar</button>
 </form>
 @endif
 @endsection

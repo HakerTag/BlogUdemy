@@ -10477,22 +10477,3 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.active {
-  text-decoration: none;
-  color: green;
-}
-
-.error {
-  color: red;
-  font-size: 12px;
-}
-
-nav {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-

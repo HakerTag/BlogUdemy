@@ -11,20 +11,3 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-
-.active{
-			text-decoration: none;
-			color: green;
-		}
-		.error{
-			color: red;
-			font-size: 12px;
-		}
-
-$color: #005400;
-
-nav{
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-}
