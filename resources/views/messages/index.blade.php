@@ -33,5 +33,5 @@
 			</tr>
 			@endforeach
 		</tbody>
-	</table><hr>
+	</table>
 @endsection
