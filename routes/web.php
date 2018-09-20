@@ -1,11 +1,11 @@
 <?php
 
-// App\User::create([
-// 'name' => 'Moderador',
-// 'email' => 'moderador@gmail.com',
-// 'password' => bcrypt('123123'),
-// 'role' => 'moderador'
-// ]);
+/*App\User::create([
+'name' => 'Moderador',
+'email' => 'moderador@gmail.com',
+'password' => bcrypt('123123'),
+'role' => 'moderador'
+]);*/
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 
