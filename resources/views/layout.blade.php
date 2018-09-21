@@ -26,6 +26,12 @@
 		<li class="nav-item  {{ activeMenu('mensajes*') }}">
 			<a class="nav-link" href="{{ route('mensajes.index') }}" id="mensajes-tab">Mensajes</a>
 		</li>
+		@if (auth()->user()->role === 'admin')
+
+		<li class="nav-item  {{ activeMenu('usuarios*') }}">
+			<a class="nav-link" href="{{ route('usuarios.index') }}" id="usuarios-tab">Usuarios</a>
+		</li>
+		@endif
 		@endif
 
      	
