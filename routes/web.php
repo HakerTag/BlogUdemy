@@ -1,16 +1,18 @@
 <?php
 
 
-// App\User::create([
-// 'name' => 'Daniel',
-// 'email' => 'daniel@gmail.com',
-// 'password' => bcrypt('123123')
-// ]);
-// App\User::create([
-// 'name' => 'Estudiante',
-// 'email' => 'estudiante@gmail.com',
-// 'password' => bcrypt('123123')
-// ]);
+App\User::create([
+'name' => 'Daniel',
+'email' => 'daniel@gmail.com',
+'password' => bcrypt('123123'),
+'role_id' => '1'
+]);
+App\User::create([
+'name' => 'Estudiante',
+'email' => 'estudiante@gmail.com',
+'password' => bcrypt('123123'),
+'role_id' => '2'
+]);
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 
