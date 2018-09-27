@@ -27,4 +27,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function hasRoles(array $roles)
+    {
+        foreach ($roles as $role) 
+        {
+            if ($this->role === $role) 
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

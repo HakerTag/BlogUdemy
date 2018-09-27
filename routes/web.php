@@ -6,12 +6,11 @@
 // 'email' => 'daniel@gmail.com',
 // 'password' => bcrypt('123123')
 // ]);
-/*App\User::create([
-'name' => 'Moderador',
-'email' => 'moderador@gmail.com',
-'password' => bcrypt('123123'),
-'role' => 'moderador'
-]);*/
+// App\User::create([
+// 'name' => 'Estudiante',
+// 'email' => 'estudiante@gmail.com',
+// 'password' => bcrypt('123123')
+// ]);
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 

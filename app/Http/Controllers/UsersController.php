@@ -9,7 +9,8 @@ class UsersController extends Controller
 {
     function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','roles:admin,estudiante'
+    ]);
     }
     /**
      * Display a listing of the resource.
