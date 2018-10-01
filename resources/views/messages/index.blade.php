@@ -22,7 +22,8 @@
 				</td>
 				<td>{{ $m->email }}</td>
 				<td>{{ $m->mensaje }}</td>
-				<td><button class="btn btn-info btn-sm"><a href="{{ route('mensajes.edit', $m->id) }}">Editar</button> </a>
+				<td>
+					<button class="btn btn-info btn-sm"><a href="{{ route('mensajes.edit', $m->id) }}">Editar</button> </a>
 					<form style="display: inline;" method="POST" action="{{ route('mensajes.destroy', $m->id)}}">
 						{!! csrf_field() !!}
 						{{ method_field('DELETE') }}

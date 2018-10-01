@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','role_id'
     ];
 
     /**
@@ -28,15 +28,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'assigned_roles');
+    }
+
     public function hasRoles(array $roles)
     {
-        foreach ($roles as $role) 
-        {
-            if ($this->role === $role) 
-            {
-                return true;
-            }
-        }
-        return false;
+            return $this->roles->pluck('name')->intersect($roles)->count();
+    }
+
+    public function isAdmin()
+    {
+        return $this->hasRoles(['admin']);
     }
 }
