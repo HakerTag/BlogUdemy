@@ -15,13 +15,18 @@
 			@foreach($messages as $m)
 			<tr>
 				<td>{{ $m->id }}</td>
-				<td>
-					<a href="{{ route('mensajes.show', $m->id) }}">
-					{{ $m->nombre }}
-				</a>
-				</td>
-				<td>{{ $m->email }}</td>
-				<td>{{ $m->mensaje }}</td>
+				@if ($m->user_id)
+					<td><a href="{{ route('usuarios.show',$m->user_id) }}">
+						{{ $m->user->name }}
+						</a>
+					</td>
+					<td>{{ $m->user->email }}</td>
+				@else
+					<td>{{ $m->nombre }}</td>
+					<td>{{ $m->email }}</td>
+				@endif
+				<td><a href="{{ route('mensajes.show', $m->id) }}">
+					{{ $m->mensaje }}</a></td>
 				<td>
 					<button class="btn btn-info btn-sm"><a href="{{ route('mensajes.edit', $m->id) }}">Editar</button> </a>
 					<form style="display: inline;" method="POST" action="{{ route('mensajes.destroy', $m->id)}}">

@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<style>
+		.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+	</style>
 	<meta charset="UTF-8">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="stylesheet" href="/css/app.css">
 	<title>Mi sitio</title>
 </head>

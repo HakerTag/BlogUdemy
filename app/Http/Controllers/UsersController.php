@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Role;
 use App\Http\Requests\UpdateUserRequest;
-
+use App\Http\Requests\CreateUserRequest;
 class UsersController extends Controller
 {
     function __construct()
@@ -31,18 +32,23 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::pluck('display_name', 'id');    
+        return view('users.create',compact('roles'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  use App\Http\Requests\UpdateUserRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateUserRequest $request)
     {
-        //
+        $user = User::create($request->all());
+
+        $user->roles()->attach($request->roles);
+
+        return redirect()->route('usuarios.index');
     }
 
     /**
@@ -68,7 +74,8 @@ class UsersController extends Controller
     {
         $user = User::findOrFail($id);
         $this->authorize('edit',$user);
-        return view('users.edit', compact('user'));
+        $roles = Role::pluck('display_name', 'id');    
+        return view('users.edit', compact('user','roles'));
     }
 
     /**
@@ -80,9 +87,11 @@ class UsersController extends Controller
      */
     public function update(UpdateUserRequest $request, $id)
     {
+
         $user = User::findOrFail($id);
         $this->authorize('edit',$user);
-        $user->update($request->all());
+        $user->update($request->only('name', 'email'));
+        $user->roles()->sync($request->roles);
         return back()->with('info', 'Usuario Actualizado'); 
     }
 
@@ -95,9 +104,9 @@ class UsersController extends Controller
     public function destroy($id)
     {
         $user = User::findOrFail($id);
-        $this->authorize($user);
+        $this->authorize('destroy', $user);
         $user->delete();
-
+        $user->roles()->sync([]);
         return back();
     }
 }

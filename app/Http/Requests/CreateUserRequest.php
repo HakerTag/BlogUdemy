@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateMessageRequest extends FormRequest
+class CreateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,11 @@ class CreateMessageRequest extends FormRequest
      */
     public function rules()
     {
-        $validate = auth()->check() ? '' : 'required';
         return [
-            'nombre' => $validate   ,
-            'email' => $validate.'|email',
-            'mensaje' => 'required|min:5'
+            'name' => 'required',
+            'email' => 'email|required|unique:users,email',
+            'password' => 'required|confirmed',
+            'roles' => 'required'
         ];
     }
 }
