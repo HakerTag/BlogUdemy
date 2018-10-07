@@ -4,7 +4,10 @@
 	
 	<form method="POST" action="{{ route('mensajes.update', $message->id) }}">
 		{!! method_field('PUT') !!}
-	@include('messages.form', ['btnText' => 'Actualizar'])
+	@include('messages.form', [
+		'btnText' => 'Actualizar',
+		'showFields' => ! $message->user_id
+		])
 </form>
 
 @endsection

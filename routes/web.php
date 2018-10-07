@@ -18,10 +18,13 @@
 // {
 // 	return \App\Role::with('user')->get();
 // });
+// DB::listen(function($query){
+// 	echo "<pre>{$query->sql}</pre>";
+// });
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 
-Route::get('saludos/{nombre?}', ['as' => 'saludos','uses' => 'PagesController@saludo'])->where('nombre', "[A-Za-z]+");
+Route::get('saludos/{nombre}', ['as' => 'saludos','uses' => 'PagesController@saludo'])->where('nombre', "[A-Za-z]+");
 
 Route::resource('mensajes','MessagesController');
 Route::resource('usuarios','UsersController');

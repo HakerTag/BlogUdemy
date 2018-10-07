@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Mail;
 use Carbon\Carbon;
 use App\Http\Requests\CreateMessageRequest;
 use App\Message;
@@ -23,7 +24,7 @@ class MessagesController extends Controller
     public function index()
     {
       
-        $messages = Message::all();
+        $messages = Message::with(['user', 'note', 'tags'])->get();
         return view('messages.index', compact('messages'));
     }
 
@@ -51,6 +52,10 @@ class MessagesController extends Controller
         {
             auth()->user()->messages()->save($message);
         }
+
+        Mail::send('emails.contact',['msg' => $message],function($m)  use ($message){
+            $m->to($message->email, $message->nombre)->subject('Tu mensaje fue recibido');
+        });
 
         // auth()->user()->messages()->create($request->all());
         // $message->user_id = auth()->id();
