@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use DB;
 use Mail;
-use Carbon\Carbon;
-use App\Http\Requests\CreateMessageRequest;
 use App\Message;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use App\Events\MessageWasReceived;
+use Illuminate\Database\Eloquent\Model;
+use App\Http\Requests\CreateMessageRequest;
+
 
 class MessagesController extends Controller
 {
@@ -53,10 +56,8 @@ class MessagesController extends Controller
             auth()->user()->messages()->save($message);
         }
 
-        Mail::send('emails.contact',['msg' => $message],function($m)  use ($message){
-            $m->to($message->email, $message->nombre)->subject('Tu mensaje fue recibido');
-        });
-
+        event(new MessageWasReceived($message));
+        //Esta forma sirve cuando sabemos que siempre tenemos un usuario autenticado
         // auth()->user()->messages()->create($request->all());
         // $message->user_id = auth()->id();
         // $message->save();

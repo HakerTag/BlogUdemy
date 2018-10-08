@@ -32,6 +32,7 @@ class UsersController extends Controller
      */
     public function create()
     {
+        //dd(config//va  a la carpeta config// y donde ira('//qeue archivo queremosservices.//que dato queremos2checkout.')); como acceder a datos
         $roles = Role::pluck('display_name', 'id');    
         return view('users.create',compact('roles'));
     }
