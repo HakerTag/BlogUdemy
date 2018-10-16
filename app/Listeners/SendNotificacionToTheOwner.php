@@ -23,7 +23,7 @@ class SendNotificacionToTheOwner
         Mail::send('emails.contact',['msg' => $message],function($m)  use ($message){
             $m->from($message->email, $message->nombre)
             ->to('danielkage9@gmail.com', 'Daniel')
-            ->subject('Tu mensaje fue recibido');
+            ->subject('Recibiste un mensaje');
         });
     }
 }
