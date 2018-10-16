@@ -62,7 +62,7 @@ class MessagesController extends Controller
         {
             auth()->user()->messages()->save($message);
         }
-
+        Cache::tags('messages')->flush();
         event(new MessageWasReceived($message));
         //Esta forma sirve cuando sabemos que siempre tenemos un usuario autenticado
         // auth()->user()->messages()->create($request->all());
@@ -80,7 +80,7 @@ class MessagesController extends Controller
      */
     public function show($id)
     {   
-        $message = Cache::rememberForever("messages.{$id}", function() use ($id){
+        $message = Cache::tags('messages')->rememberForever("messages.{$id}", function() use ($id){
             return Message::findOrFail($id);
         });
 
@@ -95,7 +95,7 @@ class MessagesController extends Controller
      */
     public function edit($id)
     {
-        $message = Cache::rememberForever("messages.{$id}", function() use ($id){
+        $message = Cache::tags('messages')->rememberForever("messages.{$id}", function() use ($id){
             return Message::findOrFail($id);
         });
         return view('messages.edit',compact('message'));
@@ -112,7 +112,7 @@ class MessagesController extends Controller
     {
          Message::findOrFail($id)->update($request->all());
 
-         Cache::flush();
+         Cache::tags('messages')->flush();
 
         return redirect()->route('mensajes.index');
     }
@@ -127,7 +127,7 @@ class MessagesController extends Controller
     {
         Message::findOrFail($id)->delete();
 
-        Cache::flush();
+        Cache::tags('messages')->flush();
 
         return redirect()->route('mensajes.index');
     }
