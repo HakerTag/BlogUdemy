@@ -8,6 +8,7 @@
 				<th>Nombre</th>
 				<th>Email</th>
 				<th>Mensaje</th>
+				<th>Notas</th>
 				<th>Acciones</th>
 			</tr>
 		</thead>
@@ -28,6 +29,7 @@
 				<td><a href="{{ route('mensajes.show', $m->id) }}">
 					{{ $m->mensaje }}</a></td>
 				<td>
+					<td>Nota de mensaje</td>
 					<button class="btn btn-info btn-sm"><a href="{{ route('mensajes.edit', $m->id) }}">Editar</button> </a>
 					<form style="display: inline;" method="POST" action="{{ route('mensajes.destroy', $m->id)}}">
 						{!! csrf_field() !!}
