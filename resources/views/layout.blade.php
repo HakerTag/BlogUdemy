@@ -24,10 +24,12 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: #e3f2fd;">
     <ul class="navbar-nav container" id="myTab">
-    	<li class="nav-item {{ activeMenu('/') }}" id="home-tab"><a class="nav-link" href="{{ route('home') }}">Home</a>
+    	<li class="nav-item {{ activeMenu('/') }}" id="home-tab">
+    		<a class="nav-link" href="{{ route('home') }}">Home</a>
 		</li>
 		<li class="nav-item  {{ activeMenu('mensajes/create') }}" id="contacto-tab"><a class="nav-link" href="{{ route('mensajes.create') }}">Contactos</a>
 		</li>
+		
 		@if(auth()->check())
 		<li class="nav-item  {{ activeMenu('mensajes*') }}">
 			<a class="nav-link" href="{{ route('mensajes.index') }}" id="mensajes-tab">Mensajes</a>
