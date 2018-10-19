@@ -2,10 +2,9 @@
 
 
 // App\User::create([
-// 'name' => 'otroadmin',
-// 'email' => 'otro@gmail.com',
-// 'password' => bcrypt('123123'),
-// 'role_id' => '1'
+// 'name' => 'admin',
+// 'email' => 'admin@gmail.com',
+// 'password' => bcrypt('123123')
 // ]);
 // App\User::create([
 // 'name' => 'Moderador',
