@@ -9,6 +9,10 @@
 				<th>Email</th>
 				<th>Mensaje</th>
 				<th>Notas</th>
+<<<<<<< HEAD
+=======
+				<th>Etiquetas</th>
+>>>>>>> c3617107df717a1f79240d9cc062860775951201
 				<th>Acciones</th>
 			</tr>
 		</thead>
@@ -28,9 +32,16 @@
 				@endif
 				<td><a href="{{ route('mensajes.show', $m->id) }}">
 					{{ $m->mensaje }}</a></td>
+<<<<<<< HEAD
 				<td>
 					<td>Nota de mensaje</td>
 					<button class="btn btn-info btn-sm"><a href="{{ route('mensajes.edit', $m->id) }}">Editar</button> </a>
+=======
+					<td>{{ optional( $m->note )->body }}</td>
+					<td>{{ $m->tags->pluck('name')->implode(', ') }}</td>
+					<td>
+					<a class="btn btn-primary btn-sm" href="{{ route('mensajes.edit', $m->id) }}">Editar</a>
+>>>>>>> c3617107df717a1f79240d9cc062860775951201
 					<form style="display: inline;" method="POST" action="{{ route('mensajes.destroy', $m->id)}}">
 						{!! csrf_field() !!}
 						{{ method_field('DELETE') }}
@@ -40,6 +51,8 @@
 				</td>
 			</tr>
 			@endforeach
+
+			{!! $messages->fragment('hash')->appends(request()->query())->links('pagination::bootstrap-4') !!}
 		</tbody>
 	</table>
 @endsection
