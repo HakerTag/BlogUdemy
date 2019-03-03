@@ -15,7 +15,7 @@ class MessageTableSeeder extends Seeder
     {
         Message::truncate();
 
-        for ($i=1; $i < 101; $i++)
+        for ($i=1; $i < 21; $i++)
          { 
 	        	Message::create([
 	        	'nombre' => "Usuario {$i}",

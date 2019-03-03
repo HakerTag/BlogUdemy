@@ -2,7 +2,9 @@
 
 namespace App\Repositories;
 
-class CacheMessages
+use Illuminate\Support\Facades\Cache;
+
+class CacheMessages implements MessagesInterface
 {
 	protected $messages;
 
@@ -15,31 +17,39 @@ class CacheMessages
 	{
 		$key = "messages.page." . request('page', 1);
 
-       return Cache::rememberForever($key, function(){
-              return  Message::with(['user', 'note', 'tags'])
-            ->orderBy('created_at', request('sorted', 'DESC'))
-            ->paginate(10);
-        });
+       return Cache::tags('messages')->rememberForever($key, function(){
+       	return $this->messages->getPaginated();
+       });
+        
 	}
 
 	public function store($request)
 	{
-		# code...
+		$message = $this->messages->store($request);
+		Cache::tags('messages')->flush();
+		return $message;
 	}
 
 	public function FindById($id)
 	{
-		# code...
+		return Cache::tags('messages')
+				->rememberForever("messages.{$id}", function() use ($id){
+           			 return $this->FindById($id);
+        });
 	}
 
 	public function update($request, $id)
 	{
-		# code...
+		$message = $this->messages->update($request, $id);
+		Cache::tags('messages')->flush();
+		return $message;
 	}
 
 	public function destroy($id)
 	{
-		# code...
+		$message = $this->messages->destroy( $id);
+		Cache::tags('messages')->flush();
+		return $message;
 	}
 
 }
