@@ -23,6 +23,15 @@ class Message extends Model
 		return $this->morphToMany(Tag::class, 'taggable');
 	}
 
+	public function userName()
+	{
+		# code...
+	}
+
+	public function userEmail()
+	{
+		# code...
+	}
 }
 
 

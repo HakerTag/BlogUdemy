@@ -76,6 +76,7 @@
 
 	</div>
 	<script src="/js/app.js"></script>
+	<script type="/js/vue.min"></script>
 	
 
 </body>
