@@ -25,12 +25,18 @@ class Message extends Model
 
 	public function userName()
 	{
-		# code...
+		if ($this->user_id) {
+				return $this->user->name;
+		}
+		return $this->nombre;
 	}
 
 	public function userEmail()
 	{
-		# code...
+		if ($this->user_id) {
+				return $this->user->email;
+		}
+		return $this->email;
 	}
 }
 

@@ -21,13 +21,11 @@
 				<td>{{ $m->userEmail() }}</td>
 				<td><a href="{{ route('mensajes.show', $m->id) }}">
 					{{ $m->mensaje }}</a></td>
-				<td>
-					<td>Nota de mensaje</td>
+				{{-- <td> --}}
+					{{-- <td>Nota de mensaje</td> --}}
 					<td>{{ optional( $m->note )->body }}</td>
 					<td>{{ $m->tags->pluck('name')->implode(', ') }}</td>
-					{{-- <button class="btn btn-info btn-sm"><a href="{{ route('mensajes.edit', $m->id) }}">Editar</button> </a> --}}
 					<td>
-					<a class="btn btn-primary btn-sm" href="{{ route('mensajes.edit', $m->id) }}">Editar</a> 
 					<a class="btn btn-primary btn-sm" href="{{ route('mensajes.edit', $m->id) }}">Editar</a>
 					<form style="display: inline;" method="POST" action="{{ route('mensajes.destroy', $m->id)}}">
 						{!! csrf_field() !!}
