@@ -17,14 +17,14 @@
 			@foreach($messages as $m)
 			<tr>
 				<td>{{ $m->id }}</td>
-				<td>{{ $m->userName() }}</td>
-				<td>{{ $m->userEmail() }}</td>
-				<td><a href="{{ route('mensajes.show', $m->id) }}">
-					{{ $m->mensaje }}</a></td>
+				<td>{!! $m->present()->userName() !!}</td>
+				<td>{{ $m->present()->userEmail() }}</td>
+				<td>{!! $m->present()->link() !!}</td>
+			
 				{{-- <td> --}}
 					{{-- <td>Nota de mensaje</td> --}}
-					<td>{{ optional( $m->note )->body }}</td>
-					<td>{{ $m->tags->pluck('name')->implode(', ') }}</td>
+					<td>{{ $m->present()->notes() }}</td>
+					<td>{{ $m->present()->tags()}}</td>
 					<td>
 					<a class="btn btn-primary btn-sm" href="{{ route('mensajes.edit', $m->id) }}">Editar</a>
 					<form style="display: inline;" method="POST" action="{{ route('mensajes.destroy', $m->id)}}">

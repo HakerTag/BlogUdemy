@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Presenters\MessagePresenter;
 
 class Message extends Model
 {
@@ -23,20 +24,9 @@ class Message extends Model
 		return $this->morphToMany(Tag::class, 'taggable');
 	}
 
-	public function userName()
+	public function present()
 	{
-		if ($this->user_id) {
-				return $this->user->name;
-		}
-		return $this->nombre;
-	}
-
-	public function userEmail()
-	{
-		if ($this->user_id) {
-				return $this->user->email;
-		}
-		return $this->email;
+		return new MessagePresenter($this);
 	}
 }
 
