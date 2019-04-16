@@ -1,5 +1,8 @@
 <?php
-
+// Route::get('job', function(){
+// 	dispatch(new App\Jobs\SendEmail);
+// 	return "Listo";
+// });
 // App\User::create([
 // 'name' => 'admin',
 // 'email' => 'admin@gmail.com',

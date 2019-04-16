@@ -16,13 +16,10 @@
 		<tbody>
 			@foreach($messages as $m)
 			<tr>
-				<td>{{ $m->id }}</td>
-				<td>{!! $m->present()->userName() !!}</td>
-				<td>{{ $m->present()->userEmail() }}</td>
-				<td>{!! $m->present()->link() !!}</td>
-			
-				{{-- <td> --}}
-					{{-- <td>Nota de mensaje</td> --}}
+					<td>{{ $m->id }}</td>
+					<td>{{  $m->present()->userName() }}</td>
+					<td>{{ $m->present()->userEmail() }}</td>
+					<td>{!! $m->present()->link() !!}</td>
 					<td>{{ $m->present()->notes() }}</td>
 					<td>{{ $m->present()->tags()}}</td>
 					<td>
