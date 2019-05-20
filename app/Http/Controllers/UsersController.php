@@ -7,6 +7,7 @@ use App\User;
 use App\Role;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\CreateUserRequest;
+
 class UsersController extends Controller
 {
     function __construct()
@@ -33,7 +34,7 @@ class UsersController extends Controller
     public function create()
     {
         //dd(config//va  a la carpeta config// y donde ira('//qeue archivo queremosservices.//que dato queremos2checkout.')); como acceder a datos
-        $roles = Role::pluck('display_name', 'id');    
+        $roles = Role::pluck('display_name', 'id');
         return view('users.create',compact('roles'));
     }
 
@@ -75,7 +76,7 @@ class UsersController extends Controller
     {
         $user = User::findOrFail($id);
         $this->authorize('edit',$user);
-        $roles = Role::pluck('display_name', 'id');    
+        $roles = Role::pluck('display_name', 'id');
         return view('users.edit', compact('user','roles'));
     }
 
@@ -93,7 +94,7 @@ class UsersController extends Controller
         $this->authorize('edit',$user);
         $user->update($request->only('name', 'email'));
         $user->roles()->sync($request->roles);
-        return back()->with('info', 'Usuario Actualizado'); 
+        return back()->with('info', 'Usuario Actualizado');
     }
 
     /**
