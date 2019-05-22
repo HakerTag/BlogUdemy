@@ -12,7 +12,7 @@
 	<meta charset="UTF-8">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="stylesheet" href="/css/app.css">
-	<title>Mi sitio</title>
+	<title>@yield('title','Mi sitio')</title>
 </head>
 <body>
 	
