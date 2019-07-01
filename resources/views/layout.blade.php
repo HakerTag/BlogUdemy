@@ -15,11 +15,11 @@
 	<title>@yield('title','Mi sitio')</title>
 </head>
 <body>
-	
+
 	<header>
 		<?php function activeMenu($url){
 		return request()->is($url) ?  'active' : '';
-		}?>	        
+		}?>
 <nav class="navbar navbar-expand-sm navbar navbar-light" >
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: #e3f2fd;">
@@ -29,7 +29,7 @@
 		</li>
 		<li class="nav-item  {{ activeMenu('mensajes/create') }}" id="contacto-tab"><a class="nav-link" href="{{ route('mensajes.create') }}">Contactos</a>
 		</li>
-		
+
 		@if(auth()->check())
 		<li class="nav-item  {{ activeMenu('mensajes*') }}">
 			<a class="nav-link" href="{{ route('mensajes.index') }}" id="mensajes-tab">Mensajes</a>
@@ -41,8 +41,8 @@
 		@endif
 		@endif
 
-     	
-		
+
+
     </ul>
     <ul class="navbar-nav my-2 my-lg-0">
         @if(auth()->guest())
@@ -62,12 +62,12 @@
    		@endif
    	</ul>
   </div>
-</nav> 
+</nav>
 
 
 
 		{{-- <h1>{{ request()->is('/') ? 'Estas en el Home' : 'No estas en el home'}}</h1> --}}
-		
+
 	</header>
 	<div class="container">
 		@yield('contenido')
@@ -77,7 +77,7 @@
 	</div>
 	<script src="/js/app.js"></script>
 	<script type="/js/vue.min"></script>
-	
+
 
 </body>
 </html>
