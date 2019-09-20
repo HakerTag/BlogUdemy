@@ -24,13 +24,10 @@
 // });
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
-
 Route::resource('mensajes','MessagesController');
 Route::resource('usuarios','UsersController');
-
 Route::get('login','Auth\LoginController@showloginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-
