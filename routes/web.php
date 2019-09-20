@@ -32,8 +32,5 @@ Route::get('login','Auth\LoginController@showloginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();
-
-<<<<<<< HEAD
 Route::get('/home', 'HomeController@index')->name('home');
-=======
->>>>>>> e18a00075f3cda8398cd94b5ba633bab24a0b154
+

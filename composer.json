@@ -12,11 +12,7 @@
         "clarification/sparkpost-laravel-driver": "^1.2",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
-<<<<<<< HEAD
         "laravel/framework": "5.8.*",
-=======
-        "laravel/framework": "^5.8.0",
->>>>>>> e18a00075f3cda8398cd94b5ba633bab24a0b154
         "laravel/tinker": "^1.0",
         "maatwebsite/excel": "^3.1",
         "predis/predis": "^1.1"
