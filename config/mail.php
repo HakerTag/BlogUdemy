@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'daniel.trejo@solexvintel.com.mx'),
+        'address' => env('MAIL_FROM_ADDRESS', 'danielkage9@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Daniel'),
     ],
 
@@ -117,6 +117,14 @@ return [
 
         'paths' => [
             resource_path('views/vendor/mail'),
+        ],
+    ],
+
+    'stream' => [
+    'ssl' => [
+        'allow_self_signed' => true,
+        'verify_peer' => false,
+        'verify_peer_name' => false,
         ],
     ],
 

@@ -28,7 +28,7 @@ class MessagesController extends Controller
     public function index()
     {
         $messages = $this->messages->getPaginated();
-      
+
         return view('messages.index', compact('messages'));
     }
 
@@ -69,8 +69,8 @@ class MessagesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
-        $message = $this->messages->FindById($id); 
+    {
+        $message = $this->messages->FindById($id);
 
         return view('messages.show',compact('message'));
     }
