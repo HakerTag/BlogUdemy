@@ -20,5 +20,10 @@ mix.scripts([
 	], 'public/js/all.js', 'node_modules');
 
 mix.browserSync({
-    proxy: 'http://blogudemy.test'
+    proxy: 'http://blogudemy.com'
 });
+
+if(mix.inProduction())
+{
+	mix.version();
+}

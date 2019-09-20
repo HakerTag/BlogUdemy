@@ -1,35 +1,47 @@
-	{!! csrf_field() !!}
-	<p><label for="name">
-		Nombre
-		<input class="form-control" type="text" name="name" value="{{ $user->name ?? old('name')}}">
-		{!! $errors->first('name','<span class=error>:message</span>')  !!}
-	</label></p>
-	<p><label for="email">
+		@csrf
+		<label for="name">Nombre</label>
+		<input class="form-control shadow-sm bg-light @error('nombre') is-invalid @else border-0 @enderror"
+		 type="text" name="name" value="{{ $user->name ?? old('name')}}">
+		@error('name')
+			<span class="invalid-feedback" role="alert">
+				<strong>{{ $message }}</strong>
+			</span>
+		@enderror
+	<label for="email"></label>
 		Email
-		<input class="form-control" type="email" name="email" value="{{ $user->email ?? old('email')}}">
-		{!!  $errors->first('email','<span class=error>:message</span>') !!}
-	</label></p>
+		<input class="form-control hadow-sm bg-light @error('nombre') is-invalid @else border-0 @enderror" type="email" name="email" value="{{ $user->email ?? old('email')}}">
+		@error('email')
+			<span class="invalid-feedback" role="alert">
+				<strong>{{ $message }}</strong>
+			</span>
+		@enderror
 
 	@unless ($user->id)
-	<p><label for="password">
-		Contraseña
-		<input class="form-control" type="password" name="password">
-		{!! $errors->first('password','<span class=error>:message</span>')  !!}
-	</label></p>
+		<label for="password">Contraseña</label>
+		<input class="form-control hadow-sm bg-light @error('nombre') is-invalid @else border-0 @enderror" type="password" name="password">
+		@error('password')
+			<span class="invalid-feedback" role="alert">
+				<strong>{{ $message }}</strong>
+			</span>
+		@enderror
 
-	<p><label for="password_confirmation">
+	<label for="password_confirmation"></label>
 		Contraseña Confirm
-		<input class="form-control" type="password" name="password_confirmation">
-		{!! $errors->first('password_confirmation','<span class=error>:message</span>')  !!}
-	</label></p>
+		<input class="form-control hadow-sm bg-light @error('nombre') is-invalid @else border-0 @enderror" type="password" name="password_confirmation">
+		@error('password_confirmation')
+			<span class="invalid-feedback" role="alert">
+				<strong>{{ $message }}</strong>
+			</span>
+		@enderror
+
 	@endunless
 
 	<div class="checkbox">
 		@foreach ($roles as $id => $name)
 			<label>
-				<input 
-					type="checkbox" 
-					value="{{ $id }}" 
+				<input
+					type="checkbox"
+					value="{{ $id }}"
 					{{ $user->roles->pluck('id')->contains($id) ? 'checked' : '' }}
 					name="roles[]">
 				{{ $name }} <br>
@@ -39,4 +51,3 @@
 	{!! $errors->first('roles','<span class=error>:message</span>')  !!}
 	<hr>
 
-	

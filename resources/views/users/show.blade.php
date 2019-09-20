@@ -1,8 +1,11 @@
 @extends('layout')
 
 @section('contenido')
-	<h1>{{ $user->name }}</h1>
-	
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-10 col-lg-11 mx-auto">
+	<h1>Perfil de: {{ $user->name }}</h1>
+
 	<table class="table">
 		<tr>
 			<th>Nombre: </th>
@@ -24,8 +27,8 @@
 	@endcan
 
 	@can('destroy', $user)
-	   <form style="display: inline;" 
-							method="POST" 
+	   <form style="display: inline;"
+							method="POST"
 							action="{{ route('usuarios.destroy', $user->id)}}">
 						{!! csrf_field() !!}
 						{{ method_field('DELETE') }}
@@ -33,4 +36,7 @@
 						<button class="btn btn-danger" type="submit">Eliminar</button>
 					</form>
 	@endcan
+			</div>
+		</div>
+	</div>
 @endsection

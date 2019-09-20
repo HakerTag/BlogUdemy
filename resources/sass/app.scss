@@ -1,4 +1,4 @@
-// Fonts
+ // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
@@ -10,6 +10,10 @@
 @import "components/navbar";
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.h-screen{
+	height: 100vh;
 }
