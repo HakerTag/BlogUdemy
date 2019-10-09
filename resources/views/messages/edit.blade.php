@@ -4,6 +4,7 @@
 
 	<form class="shadow bg-white rounded py-3 px-4" method="POST" action="{{ route('mensajes.update', $message->id) }}">
 		{!! method_field('PUT') !!}
+		@csrf
 	@include('messages.form', [
 		'btnText' => 'Actualizar',
 		'showFields' => ! $message->user_id

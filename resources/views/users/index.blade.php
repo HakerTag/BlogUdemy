@@ -32,7 +32,7 @@
 								<form style="display: inline;"
 										method="POST"
 										action="{{ route('usuarios.destroy', $user->id)}}">
-									{!! csrf_field() !!}
+									@csrf
 									{{ method_field('DELETE') }}
 									<button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
 								</form>

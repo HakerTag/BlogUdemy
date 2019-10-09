@@ -25,5 +25,5 @@
 				<strong>{{ $message }}</strong>
 			</span>
 		@enderror
-	<input type="submit" class="btn btn-primary btn-lg btn-block" value="{{ $btnText ?? 'Enviar' }}">
+	<input type="submit" class="btn btn-primary btn-lg btn-block" value="{{ $btnText ?? 'Guardar' }}">
 	{{-- {{ var_dump($message->mensaje or old('mensaje')) }} --}}

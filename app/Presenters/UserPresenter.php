@@ -4,16 +4,14 @@ namespace App\Presenters;
 
 use Illuminate\Support\HtmlString;
 /**
- * 
+ *
  */
 class UserPresenter extends Presenter
 {
-	
+
 	public function link()
 	{
-		return	new HtmlString("<a href='" 
-			. route('usuarios.show', $this->model->id) . 
-				"'>{$this->model->name}</a>");
+		return	new HtmlString("<a href='".route('usuarios.show', $this->model->id)."'>{$this->model->name}</a>");
 	}
 
 	public function roles()

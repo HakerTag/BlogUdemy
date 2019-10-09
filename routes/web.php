@@ -1,8 +1,8 @@
 <?php
-// Route::get('job', function(){
-// 	dispatch(new App\Jobs\SendEmail);
-// 	return "Listo";
-// });
+/* Route::get('job', function(){
+ 	dispatch(new App\Jobs\SendEmail);
+	return "Listo";
+ });*/
 // App\User::create([
 // 'name' => 'admin',
 // 'email' => 'admin@gmail.com',
@@ -19,9 +19,9 @@
 // {
 // 	return \App\Role::with('user')->get();
 // });
-// DB::listen(function($query){
-// 	echo "<pre>{$query->sql}</pre>";
-// });
+ //DB::listen(function($query){
+//	echo "<pre>{$query->sql}</pre>";
+ //});
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 
@@ -33,7 +33,4 @@ Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();
 
-<<<<<<< HEAD
 Route::get('/home', 'HomeController@index')->name('home');
-=======
->>>>>>> e18a00075f3cda8398cd94b5ba633bab24a0b154

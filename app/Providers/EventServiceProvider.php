@@ -18,6 +18,7 @@ class EventServiceProvider extends ServiceProvider
         // Registered::class =>
         'App\Events\MessageWasReceived' => [
             // SendEmailVerificationNotification::class,
+            // supervisor Para mantener JOBS and QUEUES activas
             'App\Listeners\SendAutoresponder',
             'App\Listeners\SendNotificacionToTheOwner',
         ],

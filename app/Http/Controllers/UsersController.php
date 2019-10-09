@@ -95,6 +95,7 @@ class UsersController extends Controller
         $user->update($request->only('name', 'email'));
         $user->roles()->sync($request->roles);
         return back()->with('info', 'Usuario Actualizado');
+
     }
 
     /**

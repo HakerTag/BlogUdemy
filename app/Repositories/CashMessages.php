@@ -18,9 +18,9 @@ class CacheMessages implements MessagesInterface
 		$key = "messages.page." . request('page', 1);
 
        return Cache::tags('messages')->rememberForever($key, function(){
-       	return $this->messages->getPaginated();
+       		return $this->messages->getPaginated();
        });
-        
+
 	}
 
 	public function store($request)

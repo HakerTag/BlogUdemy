@@ -7,9 +7,9 @@ use App\Events\MessageWasReceived;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SendNotificacionToTheOwner
+class SendNotificacionToTheOwner implements ShouldQueue
 {
-   
+
     /**
      * Handle the event.
      *

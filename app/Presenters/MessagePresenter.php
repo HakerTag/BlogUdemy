@@ -5,14 +5,10 @@ namespace App\Presenters;
 use App\Message;
 use Illuminate\Support\HtmlString;
 
-/**
- * 		
- */
 class MessagePresenter extends Presenter
 {
 
-	
-		public function userName()
+	public function userName()
 	{
 		if ($this->model->user_id) {
 				return $this->userLink();
@@ -26,13 +22,11 @@ class MessagePresenter extends Presenter
 				return $this->model->user->email;
 		}
 		return $this->model->email;
-	} 
+	}
 
 	public function link()
 	{
-		return	new HtmlString("<a href='" 
-			. route('mensajes.show', $this->model->id) . 
-				"'>{$this->model->mensaje}</a>");
+		return new HtmlString("<a href='".route('mensajes.show', $this->model->id)."'>{$this->model->mensaje}</a>");
 	}
 
 	public function userLink()
@@ -48,7 +42,7 @@ class MessagePresenter extends Presenter
 
 	public function tags()
 	{
-		return $this->model->tags->pluck('name')->implode(', '); 
+		return $this->model->tags->pluck('name')->implode(', ');
 	}
 
 }
