@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Cache;
 
 
-class SendAutoresponder
+class SendAutoresponder implements ShouldQueue
 {
 
     /**
@@ -26,9 +26,7 @@ class SendAutoresponder
             $message->nombre = auth()->user()->name;
             $message->email = auth()->user()->email;
         }
-
         Cache::flush();
-
         Mail::send('emails.contact',['msg' => $message],function($m)  use ($message){
             $m->to($message->email, $message->nombre)->subject('Tu mensaje fue recibido');
         });

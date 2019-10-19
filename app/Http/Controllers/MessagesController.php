@@ -14,11 +14,13 @@ use App\Repositories\MessagesInterface;
 class MessagesController extends Controller
 {
     protected $messages; //propiedad messages
+    protected $view;
 
-    function __construct(MessagesInterface $messages)
+    function __construct(MessagesInterface $messages, \Illuminate\Contracts\View\Factory $view)
     {
         $this->messages = $messages;
         $this->middleware('auth',['except' => ['create', 'store']]);
+        $this->view = $view;
     }
     /**
      * Display a listing of the resource.
@@ -29,7 +31,7 @@ class MessagesController extends Controller
     {
         $messages = $this->messages->getPaginated();
 
-        return view('messages.index', compact('messages'));
+        return $this->view->make('messages.index', compact('messages'));
     }
 
     /**
@@ -39,7 +41,7 @@ class MessagesController extends Controller
      */
     public function create()
     {
-        return view('messages.create');
+        return $this->view->make('messages.create');
     }
 
     /**
@@ -71,7 +73,6 @@ class MessagesController extends Controller
     public function show($id)
     {
         $message = $this->messages->FindById($id);
-
         return view('messages.show',compact('message'));
     }
 
