@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Cache;
 
 class SendAutoresponder
 {
-    
+
     /**
      * Handle the event.
      *
@@ -23,6 +23,7 @@ class SendAutoresponder
         // var_dump('enviar autorespondedor');
         $message = $event->message;
         if (auth()->check()) {
+            $message->nombre = auth()->user()->name;
             $message->email = auth()->user()->email;
         }
 

@@ -19,10 +19,6 @@
 <body>
 
 <header>
-		<?php function activeMenu($url){
-		return request()->is($url) ?  'active' : '';
-		}?>
-
 	<nav class="navbar navbar-expand-lg navbar navbar-light" >
 			<button class="navbar-toggler"
 				type="button"

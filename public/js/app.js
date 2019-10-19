@@ -13681,10 +13681,6 @@ var buildURL = __webpack_require__(24);
 var parseHeaders = __webpack_require__(25);
 var isURLSameOrigin = __webpack_require__(26);
 var createError = __webpack_require__(7);
-<<<<<<< HEAD
-=======
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(27);
->>>>>>> e18a00075f3cda8398cd94b5ba633bab24a0b154
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -13909,11 +13905,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-<<<<<<< HEAD
 module.exports = __webpack_require__(35);
-=======
-module.exports = __webpack_require__(36);
->>>>>>> e18a00075f3cda8398cd94b5ba633bab24a0b154
 
 
 /***/ }),
@@ -35628,11 +35620,7 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(9);
-<<<<<<< HEAD
 axios.CancelToken = __webpack_require__(33);
-=======
-axios.CancelToken = __webpack_require__(34);
->>>>>>> e18a00075f3cda8398cd94b5ba633bab24a0b154
 axios.isCancel = __webpack_require__(8);
 
 // Expose all/spread
@@ -36355,19 +36343,11 @@ module.exports = InterceptorManager;
 
 
 var utils = __webpack_require__(0);
-<<<<<<< HEAD
 var transformData = __webpack_require__(30);
 var isCancel = __webpack_require__(8);
 var defaults = __webpack_require__(1);
 var isAbsoluteURL = __webpack_require__(31);
 var combineURLs = __webpack_require__(32);
-=======
-var transformData = __webpack_require__(31);
-var isCancel = __webpack_require__(8);
-var defaults = __webpack_require__(1);
-var isAbsoluteURL = __webpack_require__(32);
-var combineURLs = __webpack_require__(33);
->>>>>>> e18a00075f3cda8398cd94b5ba633bab24a0b154
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -36616,11 +36596,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-<<<<<<< HEAD
 /* 35 */
-=======
-/* 36 */
->>>>>>> e18a00075f3cda8398cd94b5ba633bab24a0b154
 /***/ (function(module, exports) {
 
 throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (72)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.9.3\n    at module.exports (C:\\laragon\\www\\BlogUdemy\\node_modules\\node-sass\\lib\\binding.js:13:13)\n    at Object.<anonymous> (C:\\laragon\\www\\BlogUdemy\\node_modules\\node-sass\\lib\\index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:759:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:770:10)\n    at Module.load (internal/modules/cjs/loader.js:628:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:555:12)\n    at Module.require (internal/modules/cjs/loader.js:666:19)\n    at require (internal/modules/cjs/helpers.js:16:16)\n    at Object.<anonymous> (C:\\laragon\\www\\BlogUdemy\\node_modules\\sass-loader\\lib\\loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:759:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:770:10)\n    at Module.load (internal/modules/cjs/loader.js:628:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:555:12)\n    at Module.require (internal/modules/cjs/loader.js:666:19)\n    at require (internal/modules/cjs/helpers.js:16:16)\n    at loadLoader (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\loadLoader.js:13:17)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at runLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:362:2)\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\webpack\\lib\\NormalModule.js:195:19\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:170:18\n    at loadLoader (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\loadLoader.js:27:11)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:165:10)\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:173:18\n    at loadLoader (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\loadLoader.js:36:3)\n    at iteratePitchingLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:169:2)\n    at runLoaders (C:\\laragon\\www\\BlogUdemy\\node_modules\\loader-runner\\lib\\LoaderRunner.js:362:2)\n    at NormalModule.doBuild (C:\\laragon\\www\\BlogUdemy\\node_modules\\webpack\\lib\\NormalModule.js:182:3)\n    at NormalModule.build (C:\\laragon\\www\\BlogUdemy\\node_modules\\webpack\\lib\\NormalModule.js:275:15)\n    at Compilation.buildModule (C:\\laragon\\www\\BlogUdemy\\node_modules\\webpack\\lib\\Compilation.js:157:10)\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\webpack\\lib\\Compilation.js:460:10\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\webpack\\lib\\NormalModuleFactory.js:243:5\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\webpack\\lib\\NormalModuleFactory.js:94:13\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\tapable\\lib\\Tapable.js:268:11\n    at NormalModuleFactory.<anonymous> (C:\\laragon\\www\\BlogUdemy\\node_modules\\webpack\\lib\\CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (C:\\laragon\\www\\BlogUdemy\\node_modules\\tapable\\lib\\Tapable.js:272:13)\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\webpack\\lib\\NormalModuleFactory.js:69:10\n    at C:\\laragon\\www\\BlogUdemy\\node_modules\\webpack\\lib\\NormalModuleFactory.js:196:7\n    at processTicksAndRejections (internal/process/task_queues.js:82:9)");

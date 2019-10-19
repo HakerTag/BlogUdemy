@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class SendNotificacionToTheOwner
 {
-   
+
     /**
      * Handle the event.
      *
@@ -20,6 +20,12 @@ class SendNotificacionToTheOwner
     {
         // var_dump('Notificar al dueño');
         $message = $event->message;
+
+          if (auth()->check()) {
+            $message->nombre = auth()->user()->name;
+            $message->email = auth()->user()->email;
+        }
+
         Mail::send('emails.contact',['msg' => $message],function($m)  use ($message){
             $m->from($message->email, $message->nombre)
             ->to('danielkage9@gmail.com', 'Daniel')
