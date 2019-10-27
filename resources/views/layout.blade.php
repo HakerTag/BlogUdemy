@@ -21,11 +21,11 @@
 	<title>@yield('title','Mi sitio')</title>
 </head>
 <body>
-
-<header>
-		<?php function activeMenu($url){
-		return request()->is($url) ?  'active' : '';
+<?php
+		function activeMenu($url){
+			return request()->is($url) ?  'active' : '';
 		}?>
+<header>
 <!--
 	<nav class="navbar navbar-expand-lg navbar navbar-light" >
   <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: #e3f2fd;">

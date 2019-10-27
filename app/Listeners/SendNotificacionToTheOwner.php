@@ -21,7 +21,7 @@ class SendNotificacionToTheOwner implements ShouldQueue
         // var_dump('Notificar al dueño');
         $message = $event->message;
 
-          if (auth()->check()) {
+        if (auth()->check()) {
             $message->nombre = auth()->user()->name;
             $message->email = auth()->user()->email;
         }

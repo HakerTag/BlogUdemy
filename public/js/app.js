@@ -2141,7 +2141,7 @@ function fromByteArray (uint8) {
 var BlobBuilder = typeof BlobBuilder !== 'undefined' ? BlobBuilder :
   typeof WebKitBlobBuilder !== 'undefined' ? WebKitBlobBuilder :
   typeof MSBlobBuilder !== 'undefined' ? MSBlobBuilder :
-  typeof MozBlobBuilder !== 'undefined' ? MozBlobBuilder :
+  typeof MozBlobBuilder !== 'undefined' ? MozBlobBuilder : 
   false;
 
 /**
@@ -8334,7 +8334,7 @@ Buffer.prototype.fill = function fill (val, start, end, encoding) {
 }
 
 // HELPER FUNCTIONS
-// ========
+// ================
 
 var INVALID_BASE64_RE = /[^+\/0-9A-Za-z-_]/g
 
@@ -14047,75 +14047,9 @@ function Sizzle( selector, context, results, seed ) {
 
 	results = results || [];
 
-
-return jQuery;
-} );
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function bind(fn, thisArg) {
-  return function wrap() {
-    var args = new Array(arguments.length);
-    for (var i = 0; i < args.length; i++) {
-      args[i] = arguments[i];
-    }
-    return fn.apply(thisArg, args);
-  };
-};
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(0);
-var settle = __webpack_require__(22);
-var buildURL = __webpack_require__(24);
-var parseHeaders = __webpack_require__(25);
-var isURLSameOrigin = __webpack_require__(26);
-var createError = __webpack_require__(7);
-
-module.exports = function xhrAdapter(config) {
-  return new Promise(function dispatchXhrRequest(resolve, reject) {
-    var requestData = config.data;
-    var requestHeaders = config.headers;
-
-    if (utils.isFormData(requestData)) {
-      delete requestHeaders['Content-Type']; // Let the browser set it
-    }
-
-    var request = new XMLHttpRequest();
-
-    // HTTP basic authentication
-    if (config.auth) {
-      var username = config.auth.username || '';
-      var password = config.auth.password || '';
-      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
-    }
-
-    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
-
-    // Set the request timeout in MS
-    request.timeout = config.timeout;
-
-    // Listen for ready state
-    request.onreadystatechange = function handleLoad() {
-      if (!request || request.readyState !== 4) {
-        return;
-      }
 	// Return early from calls with invalid selector or context
 	if ( typeof selector !== "string" || !selector ||
 		nodeType !== 1 && nodeType !== 9 && nodeType !== 11 ) {
-
 
 		return results;
 	}
@@ -14360,12 +14294,8 @@ function createButtonPseudo( type ) {
  */
 function createDisabledPseudo( disabled ) {
 
-
-__webpack_require__(11);
-module.exports = __webpack_require__(35);
 	// Known :disabled false positives: fieldset[disabled] > legend:nth-of-type(n+2) :can-disable
 	return function( elem ) {
-
 
 		// Only certain elements can match :enabled or :disabled
 		// https://html.spec.whatwg.org/multipage/scripting.html#selector-enabled
@@ -53346,15 +53276,8 @@ function formatArgs(args) {
 		return;
 	}
 
-
-// Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(9);
-axios.CancelToken = __webpack_require__(33);
-axios.isCancel = __webpack_require__(8);
-
 	const c = 'color: ' + this.color;
 	args.splice(1, 0, c, 'color: inherit');
-
 
 	// The final "%c" is somewhat tricky, because there could be other
 	// arguments passed either before or after the %c, so we need to
@@ -54515,18 +54438,9 @@ module.exports = isBuf;
 var withNativeBuffer = typeof Buffer === 'function' && typeof Buffer.isBuffer === 'function';
 var withNativeArrayBuffer = typeof ArrayBuffer === 'function';
 
-
-var utils = __webpack_require__(0);
-var transformData = __webpack_require__(30);
-var isCancel = __webpack_require__(8);
-var defaults = __webpack_require__(1);
-var isAbsoluteURL = __webpack_require__(31);
-var combineURLs = __webpack_require__(32);
-
 var isView = function (obj) {
   return typeof ArrayBuffer.isView === 'function' ? ArrayBuffer.isView(obj) : (obj.buffer instanceof ArrayBuffer);
 };
-
 
 /**
  * Returns true if obj is a buffer or an arraybuffer.
@@ -54839,15 +54753,11 @@ module.exports = __webpack_require__(/*! /var/www/BlogUdemy/resources/sass/app.s
 
 /***/ }),
 
-/* 35 */
-
-
 /***/ 1:
 /*!********************!*\
   !*** ws (ignored) ***!
   \********************/
 /*! no static exports found */
-
 /***/ (function(module, exports) {
 
 /* (ignored) */
