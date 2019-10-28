@@ -6,6 +6,7 @@ use Mail;
 use App\Events\MessageWasReceived;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Mail\MensajeRecibido;
 
 class SendNotificacionToTheOwner implements ShouldQueue
 {
@@ -25,11 +26,11 @@ class SendNotificacionToTheOwner implements ShouldQueue
             $message->nombre = auth()->user()->name;
             $message->email = auth()->user()->email;
         }
-
-        Mail::send('emails.contact',['msg' => $message],function($m)  use ($message){
-            $m->from($message->email, $message->nombre)
-            ->to('danielkage9@gmail.com', 'Daniel')
-            ->subject('Recibiste un mensaje');
-        });
+        Mail::to('danielkage9@gmail.com', 'Daniel')->send(new MensajeRecibido($message));
+        // Mail::send('emails.contact',['msg' => $message],function($m)  use ($message){
+        //     $m->from($message->email, $message->nombre)
+        //     ->to('danielkage9@gmail.com', 'Daniel')
+        //     ->subject('Recibiste un mensaje');
+        // });
     }
 }

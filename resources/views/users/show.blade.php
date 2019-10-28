@@ -4,6 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-sm-10 col-lg-11 mx-auto">
+				<img width="150px" src="{{ Storage::url($user->avatar) }}" alt="">
 	<h1>Perfil de: {{ $user->name }}</h1>
 
 	<table class="table">

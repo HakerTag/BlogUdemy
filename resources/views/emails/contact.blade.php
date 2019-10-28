@@ -6,9 +6,9 @@
 <body>
 	<h1>Te responderemos a la brevedad posible</h1>
 	<p>
-		Nombre: {{ $msg->nombre }} <br>
-		Email: {{ $msg->email }} <br>
-		Mensaje: {{ $msg->mensaje }}
+		Nombre: {{ $data->nombre }} <br>
+		Email: {{ $data->email }} <br>
+		Mensaje: {{ $data->mensaje }}
 	</p>
 </body>
 </html>

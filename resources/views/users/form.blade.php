@@ -1,4 +1,13 @@
 		@csrf
+		<p><label for="avatar"></label>
+			<input type="file" name="avatar" class="form-control shadow-sm bg-light @error('avatar') is-invalid @else border-0 @enderror" value="{{ $user->name ?? old('name')}}">
+				@error('avatar')
+					<span class="invalid-feedback" role="alert">
+						<strong>{{ $message }}</strong>
+					</span>
+				@enderror
+		</p>
+
 		<label for="name">Nombre</label>
 		<input class="form-control shadow-sm bg-light @error('nombre') is-invalid @else border-0 @enderror"
 		 type="text" name="name" value="{{ $user->name ?? old('name')}}">

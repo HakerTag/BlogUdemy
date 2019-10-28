@@ -4,7 +4,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-sm-10 col-lg-6 mx-auto">
-				<form class="shadow bg-white rounded py-3 px-4" method="POST" action="{{ route('usuarios.store') }}">
+				<form class="shadow bg-white rounded py-3 px-4" method="POST"
+				action="{{ route('usuarios.store') }}"
+				enctype="multipart/form-data">
 					<h1 class="display-4">Nuevo Usuario</h1>
 					<hr>
 					@include('users.form', ['user' => new App\User])

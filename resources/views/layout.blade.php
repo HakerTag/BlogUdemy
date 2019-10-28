@@ -21,10 +21,6 @@
 	<title>@yield('title','Mi sitio')</title>
 </head>
 <body>
-<?php
-		function activeMenu($url){
-			return request()->is($url) ?  'active' : '';
-		}?>
 <header>
 <!--
 	<nav class="navbar navbar-expand-lg navbar navbar-light" >
