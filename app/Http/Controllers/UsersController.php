@@ -22,7 +22,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::with(['roles', 'note', 'tags'])->get();
+        $users = User::with(['roles'])->get();
         return view('users.index', compact('users'));
     }
 
@@ -49,8 +49,8 @@ class UsersController extends Controller
         $user =(new User)->fill($request->all());
 
         $user->avatar = $request->file('avatar')->store('public');
-
         $user->save();
+
         $user->roles()->attach($request->roles);
 
         return redirect()->route('usuarios.index');

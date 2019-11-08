@@ -44,10 +44,7 @@ class User extends Authenticatable
             return $this->roles->pluck('name')->intersect($roles)->count();
     }
 
-    public function isAdmin()
-    {
-        return $this->hasRoles(['admin']);
-    }
+
 
     public function messages()
     {
