@@ -44,7 +44,6 @@ class User extends Authenticatable
             return $this->roles->pluck('name')->intersect($roles)->count();
     }
 
-
      public function isAdmin()
     {
         return $this->hasRoles(['admin']);
@@ -68,5 +67,10 @@ class User extends Authenticatable
     public function present()
     {
         return new UserPresenter($this);
+    }
+
+    public function expLaborales()
+    {
+        return $this->hasMany(ExperienciaLaboral::class);
     }
 }

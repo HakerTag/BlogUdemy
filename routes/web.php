@@ -19,13 +19,18 @@
 // {
 // 	return \App\Role::with('user')->get();
 // });
- //DB::listen(function($query){
-//	echo "<pre>{$query->sql}</pre>";
- //});
+ // DB::listen(function($query){
+	// echo "<pre>{$query->sql}</pre>";
+ // });
+
+ // Route::get('exp', function() {
+ //     return \App\ExperienciaLaboral::with('user')->get();
+ // });
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 Route::resource('mensajes','MessagesController');
 Route::resource('usuarios','UsersController');
+Route::resource('expLaboral','ExperienciaLaboralController');
 Route::get('login','Auth\LoginController@showloginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');

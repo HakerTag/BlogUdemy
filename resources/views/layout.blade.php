@@ -61,8 +61,9 @@
    		@endif
    	</ul>
   </div>
-	</nav>-->
+	</nav>
 		{{-- <h1>{{ request()->is('/') ? 'Estas en el Home' : 'No estas en el home'}}</h1> --}}
+		-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
   	<a class="navbar-brand {{ activeMenu('/') }}" href="{{ route('home') }}">Home</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,7 +96,7 @@
           {{ auth()->user()->name }}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-         <a class="dropdown-item" href="/usuarios/{{ auth()->id() }}/edit">Mi Cuenta</a>
+         <a class="dropdown-item" href="{{ route('usuarios.show',auth()->id()) }}">Mi Cuenta</a>
 	     	<a class="dropdown-item" href="/logout">Cerrar Sesión</a>
         </div>
       </li>
@@ -106,6 +107,14 @@
 </nav>
 	</header>
 	<div class="container d-flex flex-column h-screen justify-content-between" id="app">
+		@if( session()->has('info') )
+			<div class="alert alert-primary alert-dismissible fade show" role="alert">
+						{{ session('info') }}
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    <span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			@endif
 		@yield('contenido')
 		<hr>
 	<footer class="bg-white text-center text-black-50 py-3 shadow">Copyright {{ date('Y') }}</footer>

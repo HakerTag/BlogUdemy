@@ -22,6 +22,10 @@
 				{{ $role->display_name }}
 			@endforeach</td>
 		</tr>
+		<tr>
+			<th>Experiencia Laboral: </th>
+			<td><a href="{{ route('expLaboral.show', $user->id) }}">Ver mas...</a></td>
+		</tr>
 	</table>
 	@can('edit', $user)
 	<a href="{{ route('usuarios.edit', $user->id) }}" class="btn btn-info">Editar</a>

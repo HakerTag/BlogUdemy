@@ -22,7 +22,9 @@
 			<img width="100px" src="{{ Storage::url( $user->avatar ) }}" alt="">
 			</div>
 		@include('users.form')
-
+		<div>
+		<a class="btn btn-outline-secondary" href="{{ route('expLaboral.create') }}">Agregar Experiencia Laboral</a>
+		</div><hr>
 		<button class="btn btn-primary">Enviar</button>
 		</form>
 			</div>

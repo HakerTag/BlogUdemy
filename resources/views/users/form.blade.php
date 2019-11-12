@@ -58,5 +58,3 @@
 		@endforeach
 	</div>
 	{!! $errors->first('roles','<span class=error>:message</span>')  !!}
-	<hr>
-
