@@ -3,7 +3,7 @@
 <div class="container">
 		<div class="row">
 			<div class="col-12 col-sm-10 col-lg-11 mx-auto">
-			@foreach($datos as $data)
+			@foreach($user  as $data)
 
 	<h1>Perfil de: {{ $data->name }}</h1>
 	<table class="table">

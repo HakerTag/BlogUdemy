@@ -4,7 +4,7 @@
 	<p><label for="nombre">Nombre</label>
 		<input id="nombre"
 		class="form-control shadow-sm bg-light @error('nombre') is-invalid @else border-0 @enderror"
-		type="text" name="nombre" value="{{ $message->nombr1e ?? old('nombre') }}">
+		type="text" name="nombre" value="{{ $message->nombre ?? old('nombre') }}">
 		@error('nombre')
 			<span class="invalid-feedback" role="alert">
 				<strong>{{ $message }}</strong>

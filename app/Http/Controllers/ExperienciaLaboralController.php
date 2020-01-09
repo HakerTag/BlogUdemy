@@ -54,10 +54,10 @@ class ExperienciaLaboralController extends Controller
     public function show($id)
     {
         $exp = ExperienciaLaboral::findOrFail($id);
-        $datos = User::with('expLaborales')->where('id', $id)->get();
-        // $datos = ExperienciaLaboral::where('id', $id);
-        // dd($datos);
-        return view('experienciaLab.show', compact('exp', 'datos'));
+        $user = User::with('expLaborales')->where('id', $id)->get();
+        // $user = ExperienciaLaboral::where('id', $id);
+        // dd($user);
+        return view('experienciaLab.show', compact('exp', 'user'));
     }
 
     /**

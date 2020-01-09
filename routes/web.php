@@ -5,7 +5,7 @@
  });*/
 // App\User::create([
 // 'name' => 'admin',
-// 'email' => 'admin@gmail.com',
+// 'email' => 'admin@email.com',
 // 'password' => bcrypt('123123')
 // ]);
 // App\User::create([
